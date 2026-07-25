@@ -8,3 +8,7 @@ Run tests with:
 python -m pip install -r requirements.txt
 pytest -q
 ```
+
+## Progress log
+
+- M4 — Observability plane: completed (tests `tests/test_observability.py` passed). — 2026-07-25
