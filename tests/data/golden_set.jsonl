@@ -1,0 +1,2 @@
+{"user_id": "user-a", "query": "favorite editor", "expected_ids": ["m-1", "m-2"]}
+{"user_id": "user-b", "query": "project preference", "expected_ids": ["m-3"]}
