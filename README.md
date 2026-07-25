@@ -12,3 +12,4 @@ pytest -q
 ## Progress log
 
 - M4 — Observability plane: completed (tests `tests/test_observability.py` passed). — 2026-07-25
+- M5 — Governance (audit log, deletion, explainability): completed (tests `tests/test_governance.py` passed). — 2026-07-25
