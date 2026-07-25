@@ -50,21 +50,16 @@ pytest -q
 
 3) Quick demo (extract → evaluate → store)
 
-Run a one-off script to see the flow locally:
+Run the simple demo:
 
 ```bash
-python - <<'PY'
-from memory.extractor import extract_memories
-from memory.evaluator import evaluate_candidate
-from memory.store import MemoryStore
+python demo_run.py
+```
 
-store = MemoryStore()
-turn = "I'm building a product that uses Postgres and pgvector."
-for c in extract_memories(turn, user_id="u1"):
-	if evaluate_candidate(c):
-		store.add(c)
-print([r.content for r in store.query_by_user("u1")])
-PY
+Or the comprehensive demo showing all features (extract, retrieve, correct, forget, reflection):
+
+```bash
+python demo_full.py
 ```
 
 4) Connecting an LLM (optional)
