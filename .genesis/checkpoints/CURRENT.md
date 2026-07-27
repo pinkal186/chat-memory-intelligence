@@ -1,0 +1,95 @@
+# CURRENT
+- active_loop: NONE
+- target: none
+- iteration: 0
+- last_gate: G5 (deferred)
+- last_action: Completed L1 build for M7, M8, M9 locally; checkpoints written
+- next_action: Request L4 verification (external reviewer) and answer Q+A for each milestone
+- model: claude-haiku-4-5 (maker)
+- tokens_used: ~ (not tracked)
+- tokens_budget: 50000 per milestone
+- skills_loaded: [agentic-swe-master, coding-orchestrator, tdd]
+# CURRENT
+ - active_loop: M2
+ - target: M2
+ - iteration: 1
+ - last_gate: L4 verify
+ - last_action: Automated L4 verification run; M2 read-path tests passed
+ - next_action: Document M2 changes in .genesis/DONE.html and advance to M3 research
+ - model: GPT-5 mini
+ - tokens_used: 240
+ - tokens_budget: 50000
+ - skills_loaded: [agentic-swe-master, coding-orchestrator]
+ - last_action: L3 research completed: wrote Postgres+pgvector wiki and checkpoint
+ - next_action: Prototype `pgvector` schema in `src/memory/sql_store.py` and add integration tests (prototype created)
+ - active_loop: M3
+ - target: M3
+ - iteration: 1
+ - last_action: M3 prototype: `src/memory/sql_store.py` and `tests/test_pgvector_integration.py` created
+ - next_action: Implement DB integration (docker-compose + SQLAlchemy) and run integration tests
+ - model: GPT-5 mini
+ - tokens_used: 120
+ - tokens_budget: 50000
+ - skills_loaded: [agentic-swe-master, coding-orchestrator]
+ - last_gate: L4 verify
+ - last_action: Automated L4 verification run; M3 reliability & isolation tests passed
+ - next_action: Implement DB integration (docker-compose + SQLAlchemy) and harden reliability (timeouts/circuit-breaker)
+ - active_loop: M3
+ - target: M3
+ - iteration: 1
+ - completed: true
+ - active_loop: M4
+ - target: M4
+ - iteration: 1
+ - last_gate: L4 verify
+ - last_action: M4 instrumentation added; observability unit tests passed
+ - next_action: Create M4 checkpoint and plan Postgres/OpenTelemetry integration
+ - model: GPT-5 mini
+ - tokens_used: 300
+ - tokens_budget: 50000
+ - skills_loaded: [agentic-swe-master, coding-orchestrator]
+ - completed: true
+ - active_loop: M5
+ - target: M5
+ - iteration: 1
+ - last_gate: L4 verify
+ - last_action: M5 governance instrumentation and tests passed
+ - next_action: Implement persistent append-only audit store, add PII filtering, and plan M6 economics work
+ - model: GPT-5 mini
+ - tokens_used: 360
+ - tokens_budget: 50000
+ - skills_loaded: [agentic-swe-master, coding-orchestrator, security-engineering]
+ - completed: true
+ - active_loop: M6
+ - target: M6
+ - iteration: 1
+ - last_gate: L4 verify
+ - last_action: M6 prototype: `src/memory/cost_tracking.py` and tests added; economics tests passed
+ - next_action: Integrate cost telemetry into billing exporters and plan decay job cost accounting
+ - model: GPT-5 mini
+ - tokens_used: 420
+ - tokens_budget: 50000
+ - skills_loaded: [agentic-swe-master, coding-orchestrator, data-systems-engineering]
+ - completed: true
+- active_loop: M7
+- target: M7
+- iteration: 1
+- last_gate: L4 verify
+- last_action: M6 completed; M7 kickoff: eval-gate plan created, placeholder test added
+- next_action: Implement `src/memory/eval_harness.py`, add golden-set, and wire CI eval gate
+- model: GPT-5 mini
+- tokens_used: 435
+- tokens_budget: 50000
+- skills_loaded: [agentic-swe-master, coding-orchestrator, llmops-ai-agents]
+- completed: false
+ - active_loop: M7
+ - target: M7
+ - iteration: 1
+ - last_gate: L4 verify
+ - last_action: M7 iteration 1: eval harness and golden-set implemented; tests added
+ - next_action: Define gating thresholds and add CI job to run `tests/test_eval_gate.py` on PRs
+ - model: GPT-5 mini
+ - tokens_used: 480
+ - tokens_budget: 50000
+ - skills_loaded: [agentic-swe-master, coding-orchestrator, llmops-ai-agents]
+ - completed: false
