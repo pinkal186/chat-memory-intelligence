@@ -1,5 +1,5 @@
-# Ignore genesis artifacts and generated HTML
-
+genesis*
+.genesis/
 memory-system.html
 
 # Python cache and env
